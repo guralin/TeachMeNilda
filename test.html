@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    </head>
+
+    <body>
+        <h1>test</h1>
+        <p id="test"></p>
+        <button id="button">押してね！</button>
+        <script>
+            const button = document.getElementById("button");
+            const test = document.getElementById("test");
+            button.addEventListener("click",() =>{
+                test.innerHTML = "clicked!!!!";
+            });
+            const observerOptions = {
+                childList: true,
+                attributes: true,
+                subtree: true
+            }
+            const callback = () => {
+                console.log("observer");
+            }
+            const observer = new MutationObserver(callback);
+            observer.observe(test, observerOptions);
+
+        </script>
+
+    </body>
+</html>
+
+
+

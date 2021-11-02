@@ -1,0 +1,17 @@
+{
+    "name": "返ってくる時間お知らせくん",
+    "manifest_version": 3,
+    "version": "0.1",
+    "permissions": ["tabs","activeTab", "scripting", "notifications", "background"],
+    "action": {
+        "default_icon": "kao.png",
+        "default_title": "kaotest",
+        "default_popup":"popup.html"
+    },
+    "content_scripts":[
+        {
+            "matches":["*://nilda-s.net/*"],
+            "js": ["content.js"]
+        }
+    ]
+}
